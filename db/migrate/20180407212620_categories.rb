@@ -1,4 +1,5 @@
 class Categories < ActiveRecord::Migration
-  def change
-  end
+  create_table :categories do |t|
+      t.string   :name
+    end
 end
