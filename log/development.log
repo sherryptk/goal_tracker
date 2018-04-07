@@ -421,3 +421,105 @@ Started GET "/" for 127.0.0.1 at 2018-04-07 17:01:00 -0400
 Processing by HomeController#index as HTML
   Rendered home/index.html.erb (2.6ms)
 Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:14:24 -0400
+
+ArgumentError - Missing :controller key on routes definition, please check your routes.:
+  config/routes.rb:6:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+
+Started POST "/__better_errors/03afd26ddf44a3c5/variables" for 127.0.0.1 at 2018-04-07 17:14:24 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:16:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (2.5ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:16:39 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:16:40 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-04-07 17:16:42 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQAEnPeOqoCw0E8cuh98s7AUV36frxkTOV8TBkye5PJwMPHoe3ntLnG6Vt2A8eJY3qLKKc3g0Oz9Yw_Ze5qkVkY3Vl6CHaor6PYNElQ32l0yBLSqWkd9qZRRBIeuPXnrQl01ujCL8UccpUSjR2H6DcsafSaWGQ4qiIw1F5bwCc2BU0iplPHynLTKFL9nZlSdJZBGbWvf3t9RvsjEZgXan0AIfsmqE5MHJ932mWi6JShOUeyb9gt6TcMB8-0G8PF79bhKPiydPH8D1QkusAHQfz8qj3IBMFH-1o-xMAuIxw8e5t_31UjNLxu70m9eAaidbrFyVde_a3xFIvsimY0RT5pLLw3CK9mpOozNkc4m2uKZcg&state=54c773867f4671e41c67474530f565890f6b46636f2ea4dc" for 127.0.0.1 at 2018-04-07 17:16:43 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAEnPeOqoCw0E8cuh98s7AUV36frxkTOV8TBkye5PJwMPHoe3ntLnG6Vt2A8eJY3qLKKc3g0Oz9Yw_Ze5qkVkY3Vl6CHaor6PYNElQ32l0yBLSqWkd9qZRRBIeuPXnrQl01ujCL8UccpUSjR2H6DcsafSaWGQ4qiIw1F5bwCc2BU0iplPHynLTKFL9nZlSdJZBGbWvf3t9RvsjEZgXan0AIfsmqE5MHJ932mWi6JShOUeyb9gt6TcMB8-0G8PF79bhKPiydPH8D1QkusAHQfz8qj3IBMFH-1o-xMAuIxw8e5t_31UjNLxu70m9eAaidbrFyVde_a3xFIvsimY0RT5pLLw3CK9mpOozNkc4m2uKZcg", "state"=>"54c773867f4671e41c67474530f565890f6b46636f2ea4dc"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10101708514914570"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:16:43 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:17:33 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-04-07 17:17:36 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQCVXKcIOhUlADNvUuJkruibemQsBBvzHhc9wOzFd42n-QwRwmmEgWlboDhTk4VJQhoXQjtOxeCCDHGyIojPqci7IojQfToE29XVi_nYrTONGbeaapcWNPr2sJyjwr22X5xP3yPtkKLj4i_nt4la39MfRe52ldvXwUU0nqloOeInlFyrh4swlh11F3vH7CWyo2Moo6jFjzba-3s24pL9TDpagdhg14orO3U-C3QoC0wuD3_rPEMOJmD98S2cxtsD2j_PflWqZsa9WyJnf4N9naLrE05loJ7Qk4Vt3BEdvKYa8a602qE_hxnhjDYpxaEvTYLoW5QcxDnyqm-QpL-jWVKfX4oVuB9G78iF8lEYjkXG_w&state=8a0babf52589e9f8cecc9732ca13853637fb0eb8a5adf88e" for 127.0.0.1 at 2018-04-07 17:17:36 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCVXKcIOhUlADNvUuJkruibemQsBBvzHhc9wOzFd42n-QwRwmmEgWlboDhTk4VJQhoXQjtOxeCCDHGyIojPqci7IojQfToE29XVi_nYrTONGbeaapcWNPr2sJyjwr22X5xP3yPtkKLj4i_nt4la39MfRe52ldvXwUU0nqloOeInlFyrh4swlh11F3vH7CWyo2Moo6jFjzba-3s24pL9TDpagdhg14orO3U-C3QoC0wuD3_rPEMOJmD98S2cxtsD2j_PflWqZsa9WyJnf4N9naLrE05loJ7Qk4Vt3BEdvKYa8a602qE_hxnhjDYpxaEvTYLoW5QcxDnyqm-QpL-jWVKfX4oVuB9G78iF8lEYjkXG_w", "state"=>"8a0babf52589e9f8cecc9732ca13853637fb0eb8a5adf88e"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10101708514914570"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:17:37 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.2ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:17:42 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:17:42 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-04-07 17:17:44 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQBzMAzC_4D-bXNbyfjyAGSeLBs99I2--Z_F7OgsvODHRSoGdJ2c9Vi2_c3T_Jbm1a238_kpqFPEeqUSSveoF_hjov4GTzjuhIwqIySR8KdXQPbj0oNAOeELYeFGVfUzKBe6Y2Il19ZysjA7b5PXqq9i3h86SGwEWR4babgt8GnrRuqpPi1WEgBSEQgs5F5MlCLp5g2V4PSOavqa742LSVwuynYA0ySspB7hPT-v2Zz_RTrKP-elJjL13BEuirl2duToQZL_7CPkR34oqFPQ9KC_QmNa4PcofbWXf9X9emVoYkFlcvj3wslN3D31kppBqC8xzW7E6KZO_AfGgVXDTPIHE6tqrZdxShpxb-XMV4PKEg&state=73c06bcc74679a3a4a62cdf4f6b4de192436bbe3c9995b02" for 127.0.0.1 at 2018-04-07 17:17:44 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBzMAzC_4D-bXNbyfjyAGSeLBs99I2--Z_F7OgsvODHRSoGdJ2c9Vi2_c3T_Jbm1a238_kpqFPEeqUSSveoF_hjov4GTzjuhIwqIySR8KdXQPbj0oNAOeELYeFGVfUzKBe6Y2Il19ZysjA7b5PXqq9i3h86SGwEWR4babgt8GnrRuqpPi1WEgBSEQgs5F5MlCLp5g2V4PSOavqa742LSVwuynYA0ySspB7hPT-v2Zz_RTrKP-elJjL13BEuirl2duToQZL_7CPkR34oqFPQ9KC_QmNa4PcofbWXf9X9emVoYkFlcvj3wslN3D31kppBqC8xzW7E6KZO_AfGgVXDTPIHE6tqrZdxShpxb-XMV4PKEg", "state"=>"73c06bcc74679a3a4a62cdf4f6b4de192436bbe3c9995b02"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10101708514914570"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:17:45 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)

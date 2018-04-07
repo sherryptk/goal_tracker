@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'home#index', as: 'home'
 
+  get 'welcome/home', as: 'welcome'
+
 
   # resources :items, only: [:show, :index]
   # resources :categories, only: [:show, :index]
