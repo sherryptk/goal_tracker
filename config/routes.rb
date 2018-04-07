@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get 'welcome/home', as: 'welcome'
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   # resources :items, only: [:show, :index]
   # resources :categories, only: [:show, :index]
