@@ -739,3 +739,181 @@ Processing by SessionsController#create as HTML
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered welcome/home.html.erb (2.2ms)
 Completed 200 OK in 34ms (Views: 19.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 18:53:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (40.8ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.0ms)
+
+NameError - undefined local variable or method `store_path' for #<#<Class:0x007fd401323700>:0x007fd3fef02128>
+Did you mean?  root_path:
+  app/views/layouts/_header.html.erb:2:in `_app_views_layouts__header_html_erb___183423273421439366_70274263418340'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3934008020603368349_70274264583780'
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 18:53:54 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (44.6ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+NameError - undefined local variable or method `store_path' for #<#<Class:0x007fd401323700>:0x007fd40106a658>
+Did you mean?  root_path:
+  app/views/layouts/_header.html.erb:2:in `_app_views_layouts__header_html_erb___183423273421439366_70274263418340'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3934008020603368349_70274264583780'
+
+
+
+Started POST "/__better_errors/6ba3de0efdaa3b62/variables" for 127.0.0.1 at 2018-04-07 18:53:55 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 18:54:36 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (39.2ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+NameError - undefined local variable or method `home_path' for #<#<Class:0x007fd401323700>:0x007fd3ff2ab6d0>:
+  app/views/layouts/_header.html.erb:2:in `_app_views_layouts__header_html_erb___183423273421439366_70274250665140'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3934008020603368349_70274264583780'
+
+
+
+Started POST "/__better_errors/24968c41a856de96/variables" for 127.0.0.1 at 2018-04-07 18:54:36 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 18:54:52 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for 127.0.0.1 at 2018-04-07 18:54:52 -0400
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/ssl.rb:24:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.7.2) lib/thin/connection.rb:53:in `process'
+  thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+  eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+  thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.7.2) lib/thin/server.rb:162:in `start'
+  thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+  thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+  thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+  thin (1.7.2) bin/thin:6:in `<top (required)>'
+  /usr/local/bin/thin:22:in `load'
+  /usr/local/bin/thin:22:in `<top (required)>'
+  bundler (1.16.1) lib/bundler/cli/exec.rb:75:in `load'
+  bundler (1.16.1) lib/bundler/cli/exec.rb:75:in `kernel_load'
+  bundler (1.16.1) lib/bundler/cli/exec.rb:28:in `run'
+  bundler (1.16.1) lib/bundler/cli.rb:424:in `exec'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+  bundler (1.16.1) lib/bundler/cli.rb:27:in `dispatch'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+  bundler (1.16.1) lib/bundler/cli.rb:18:in `start'
+  bundler (1.16.1) exe/bundle:30:in `block in <top (required)>'
+  bundler (1.16.1) lib/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+  bundler (1.16.1) exe/bundle:22:in `<top (required)>'
+  /usr/local/bin/bundle:22:in `load'
+  /usr/local/bin/bundle:22:in `<main>'
+
+
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.9ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (236.4ms)
+
+
+Started GET "/javascripts/application.js" for 127.0.0.1 at 2018-04-07 18:54:53 -0400
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/ssl.rb:24:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.7.2) lib/thin/connection.rb:53:in `process'
+  thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+  eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+  thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.7.2) lib/thin/server.rb:162:in `start'
+  thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+  thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+  thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+  thin (1.7.2) bin/thin:6:in `<top (required)>'
+  /usr/local/bin/thin:22:in `load'
+  /usr/local/bin/thin:22:in `<top (required)>'
+  bundler (1.16.1) lib/bundler/cli/exec.rb:75:in `load'
+  bundler (1.16.1) lib/bundler/cli/exec.rb:75:in `kernel_load'
+  bundler (1.16.1) lib/bundler/cli/exec.rb:28:in `run'
+  bundler (1.16.1) lib/bundler/cli.rb:424:in `exec'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+  bundler (1.16.1) lib/bundler/cli.rb:27:in `dispatch'
+  bundler (1.16.1) lib/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+  bundler (1.16.1) lib/bundler/cli.rb:18:in `start'
+  bundler (1.16.1) exe/bundle:30:in `block in <top (required)>'
+  bundler (1.16.1) lib/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+  bundler (1.16.1) exe/bundle:22:in `<top (required)>'
+  /usr/local/bin/bundle:22:in `load'
+  /usr/local/bin/bundle:22:in `<main>'
+
+
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.3.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (125.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 18:56:33 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
