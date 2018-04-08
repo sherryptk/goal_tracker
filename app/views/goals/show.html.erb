@@ -1,8 +1,12 @@
-<h2>Goal: <%= @goal.title %></h2>
+<h2>Goal: <%= @goal.title %></h2
+
 <p><%= @goal.description %></p>
+
 <h4>Categories:</h4>
 <ul>
  <% @goal.categories.each do |category| %>
   <li><%= category.name %> </li>
 <% end %>
 </ul>
+
+<p><%=link_to "Edit Goal", edit_goal_path  %></p>
