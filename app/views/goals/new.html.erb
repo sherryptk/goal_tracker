@@ -1,13 +1,13 @@
- <h1>Enter new Goal</h1>
+ <h1>Enter New Goal</h1>
 <%= form_for :goal, url: {action: "create"} do |f| %>
-  Title: <%= f.text_field :title %><br/>
-  Content: <%= f.text_area :description, size: "24x6" %><br/>
-  Category: <%= f.text_field :category_name, list: "categories_autocomplete" %>
+  <p>Title:</p> <%= f.text_field :title %><br/>
+  <p>Description: </p><%= f.text_area :description, size: "24x6" %><br/>
+  <p>Choose Existing Category:</p> <%= f.text_field :category_name, list: "categories_autocomplete" %>
   <datalist id="categories_autocomplete">
     <% Category.all.each do |category| %>
       <option value="<%= category.name %>">
     <% end %>
-  </datalist>
-  <textarea name="post[content]"></textarea>
+  </datalist> <br/>
+  <p>Create New Category: <p/><textarea name="post[content]"></textarea>
   <%= f.submit "Create Goal" %>
 <% end %>
