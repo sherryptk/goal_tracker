@@ -1,1 +1,8 @@
-<h1><%= @goal.title %>
+<h3><%= @goal.title %></h3>
+<h4><%= @goal.description %></h4>
+<ul>
+  <% binding.pry %>
+<% @goal.categories.each do |category| %>
+  <li><%= category.name %> </li>
+<% end %>
+</ul>

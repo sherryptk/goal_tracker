@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(version: 20180407212620) do
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "goal_id"
   end
 
   create_table "goals", force: :cascade do |t|

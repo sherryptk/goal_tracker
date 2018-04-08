@@ -1,6 +1,7 @@
 class GoalsController < ApplicationController
 
   def new
+    @goal = Goal.new
   end
 
   def create
@@ -15,7 +16,7 @@ class GoalsController < ApplicationController
   private
 
  def goal_params
-   params.require(:goal).permit(:title, :category, :description)
+   params.require(:goal).permit(:title, :description, category_ids:[], categories_attributes: [:name])
  end
 
 end
