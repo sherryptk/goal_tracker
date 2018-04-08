@@ -1,17 +1,17 @@
 <h1>Enter New Goal</h1>
 <%= form_for goal do |f| %>
 
-<%= f.label :title %><br/>
+<p><%= f.label :title %></p>
 <%= f.text_field :title %><br/>
 
-<%= f.label :description %><br/>
+<p><%= f.label :description %></p>
 <%= f.text_area :description, size: "24x6" %><br/>
 
-<%= f.label "Choose Existing Category" %><br/>
+<p><%= f.label "Choose Existing Category" %></p>
 <%= collection_check_boxes :goal, :category_ids, Category.all, :id, :name %>
 
 <%= f.fields_for :categories, goal.categories.build do |category_fields| %>
-<%= f.label "Choose New Category" %><br/>
+<p><%= f.label "Choose New Category" %></p>
      <%= category_fields.text_field :name %>
  <% end %></p>
 
