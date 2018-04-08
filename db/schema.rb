@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20180407212620) do
     t.string "name"
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "goals", force: :cascade do |t|
     t.string  "title"
-    t.string  "content"
+    t.string  "description"
     t.integer "user_id"
     t.integer "category_id"
   end

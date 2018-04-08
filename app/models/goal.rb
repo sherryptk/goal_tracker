@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  has_one :category
+  has_many :categories
   belongs_to :user
 
   def category_name=(name)

@@ -1,7 +1,7 @@
 class Goals < ActiveRecord::Migration
-  create_table :items do |t|
+  create_table :goals do |t|
       t.string  :title
-      t.string  :content
+      t.string  :description
       t.integer :user_id
       t.integer :category_id
     end
