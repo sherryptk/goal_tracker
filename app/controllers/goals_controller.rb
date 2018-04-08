@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.create(goal_params)
-    redirect_to goal(@goal)
+    redirect_to goal_path(@goal)
   end
 
   def show
@@ -15,7 +15,7 @@ class GoalsController < ApplicationController
   private
 
  def goal_params
-   params.require(:goal).permit(:title, :category_name, :description)
+   params.require(:goal).permit(:title, :category, :description)
  end
 
 end
