@@ -1,0 +1,12 @@
+<h1>Enter New Goal</h1>
+<%= form_for goal do |f| %>
+ <p>Title:</p> <%= f.text_field :title %><br/>
+ <p>Description: </p><%= f.text_area :description, size: "24x6" %><br/>
+ <p>Choose Existing Category: <%= collection_select(:goal, :category_id, Category.all, :id, :name) %>
+
+   <%= fields_for :categories, goal.categories.build do |category_fields| %>
+   <p>Create New Category: <p/> <%= category_fields.text_field :name %>
+ <% end %></p>
+
+ <%= f.submit "Create Goal" %>
+<% end %>
