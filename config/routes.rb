@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => 'sessions#create' }
+
   root 'welcome#index', as: 'root'
 
   get 'welcome/home', as: 'welcome'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :goals, only: [:show, :index, :create, :new]
+  resources :goals
   resources :categories, only: [:show, :index, :create]
   # resources :users, only: [:show]
   # resources :carts

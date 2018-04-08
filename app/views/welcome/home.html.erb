@@ -1,1 +1,5 @@
-Welcome <%= current_user.email %>
+<p>Welcome <%= current_user.email %></p>
+
+<p><%=  link_to "Create New Goal", new_goal_path%></p>
+
+<p><%=  link_to "View Goals", goals_path%></p>
