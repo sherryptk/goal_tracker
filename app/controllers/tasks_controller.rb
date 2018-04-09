@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def new
-
+    @task = Task.new(goal_id: params[:goal_id])
   end
 
   def create
@@ -19,5 +19,5 @@ class TasksController < ApplicationController
   def update
 
   end
-  
+
 end

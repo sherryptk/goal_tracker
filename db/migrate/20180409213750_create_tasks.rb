@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string   :description
       t.date     :due_date
       t.boolean  :completed, :default => false
+      t.integer  :goal_id
     end
   end
 end

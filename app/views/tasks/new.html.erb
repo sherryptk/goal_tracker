@@ -1,0 +1,13 @@
+<%= form_for @task do |f| %>
+
+<p><%= f.label :description %></p>
+<%= f.text_field :description %><br/>
+
+<p><%= f.label :due_date %></p>
+<%= f.text_field :due_date, placeholder: "MM/DD/YY" %><br/>
+
+<p><%= f.label "Completed?" %></p>
+<%= f.checkbox :completed %>
+
+<%= f.submit %>
+<% end %>
