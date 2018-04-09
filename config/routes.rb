@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :goals
+  resources :goals do
+    # nested resource for posts
+    resources :tasks
+  end
+
   resources :categories, only: [:show, :index, :create]
   # resources :users, only: [:show]
   # resources :carts
