@@ -1,5 +1,6 @@
 class Goal < ActiveRecord::Base
   has_many :categories
+  has_many :tasks
   belongs_to :user
   accepts_nested_attributes_for :categories, reject_if: :all_blank
 
@@ -9,12 +10,5 @@ class Goal < ActiveRecord::Base
       self.categories << category
     end
   end
-  # def category=(name)
-  #    self.category = Category.find_or_create_by(name: name)
-  #  end
-  #
-  #  def category
-  #     self.category.name
-  #  end
 
 end

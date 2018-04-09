@@ -1,4 +1,4 @@
-<h2>Goals<h2>
+<h2>Goals</h2>
 <% @goals.each do |goal| %>
-<%= link_to goal.title, goals_path %>
+<p><%= link_to goal.title, goal_path(goal) %></p>
 <% end %>
