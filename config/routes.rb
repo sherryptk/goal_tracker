@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
+  resources :tasks
+
   resources :categories, only: [:show, :index, :create]
   # resources :users, only: [:show]
   # resources :carts
