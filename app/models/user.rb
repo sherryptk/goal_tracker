@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :goals
   has_many :categories, through: :goals
+  has_many :tasks, through: :goals
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

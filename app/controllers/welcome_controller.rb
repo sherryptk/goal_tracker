@@ -4,4 +4,12 @@ class WelcomeController < ApplicationController
     render :layout => false
   end
 
+  def home
+    if current_user
+      render :home
+    else
+      redirect_to root_path
+    end
+  end
+
 end
