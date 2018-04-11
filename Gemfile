@@ -30,3 +30,5 @@ gem "faker"
 gem "friendly_id"
 
 gem 'omniauth-facebook'
+
+gem 'american_date'
