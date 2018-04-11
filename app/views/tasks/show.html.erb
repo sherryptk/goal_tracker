@@ -3,3 +3,5 @@
 <p> Completed? <%= @task.completed? %> </p>
 
 <%= link_to "Return to Goal", goal_path(@task.goal_id) %>
+
+<p><%=link_to "Edit Task", edit_task_path  %></p>
