@@ -1,4 +1,8 @@
 <h2>Goals</h2>
+<ol>
 <% @goals.each do |goal| %>
-<p><%= link_to goal.title, goal_path(goal) %></p>
+<li><%= link_to goal.title, goal_path(goal) %></li>
 <% end %>
+</ol>
+
+<p><%=  link_to "Create New Goal", new_goal_path%></p>
