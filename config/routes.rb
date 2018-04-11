@@ -11,18 +11,11 @@ Rails.application.routes.draw do
   end
 
   resources :goals do
-    # nested resource for posts
     resources :tasks
   end
 
   resources :tasks
 
   resources :categories, only: [:show, :index, :create]
-  # resources :users, only: [:show]
-  # resources :carts
-  # resources :line_items, only: [:create]
-  # resources :orders, only: [:show]
-  #
-  # post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
 
 end

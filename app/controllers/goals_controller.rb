@@ -1,5 +1,8 @@
 class GoalsController < ApplicationController
 
+  before_action :set_goal, only: [:show, :edit, :update, :destroy]
+
+
   def index
     @goals = Goal.all
   end
@@ -19,16 +22,13 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.find(params[:id])
     @uncompleted_tasks = current_user.uncompleted_tasks
   end
 
   def edit
-    @goal = Goal.find(params[:id])
   end
 
   def update
-    @goal = Goal.find(params[:id])
     @goal.update(goal_params)
 
    if @goal.save
@@ -36,10 +36,20 @@ class GoalsController < ApplicationController
    else
      render :edit
    end
+   end
 
-  end
+   def destroy
+     @goal.destroy
+     redirect_to goals_path(@goal)
+   end
+
+
 
   private
+
+  def set_goal
+     @goal = Goal.find(params[:id])
+   end
 
  def goal_params
    params.require(:goal).permit(:title, :description, category_ids:[], categories_attributes: [:name])
