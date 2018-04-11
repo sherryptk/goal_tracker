@@ -9,6 +9,16 @@
 <% end %>
 </ul>
 
+<h3>To Do</h3>
+<ul>
+<% @goal.tasks.each do |task| %>
+  <li><%= task.description %>, Deadline: <%= task.due_date %></li>
+<% end %>
+
+</ul>
+
+
+
 <p><%=link_to "Edit Goal", edit_goal_path  %></p>
 
-<%= link_to "Create Task", new_goal_task_path(@goal) %>
+<%= link_to "Add Task", new_goal_task_path(@goal) %>

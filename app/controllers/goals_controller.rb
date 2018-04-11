@@ -9,12 +9,18 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.create(goal_params)
-    redirect_to @goal
+    @goal = Goal.create(goal_params.merge(user_id: current_user.id))
+
+    if @goal
+      redirect_to @goal
+    else
+      render :new
+    end
   end
 
   def show
     @goal = Goal.find(params[:id])
+    @uncompleted_tasks = current_user.uncompleted_tasks
   end
 
   def edit

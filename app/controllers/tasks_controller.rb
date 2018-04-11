@@ -9,7 +9,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
+    # @task = Task.create(task_params.merge(user_id: current_user.id))
+    # if @task
+    #   current_user.tasks << @task
+    # end
+    @task = current_user.tasks.build(task_params.merge(user_id: current_user.id))
+    @task.save
     redirect_to @task
   end
 
@@ -26,7 +31,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:description, :due_date, :completed, :goal_id)
+    params.require(:task).permit(:description, :due_date, :completed, :goal_id, :user_id)
   end
 
 end

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180409213750) do
     t.date    "due_date"
     t.boolean "completed",   default: false
     t.integer "goal_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
