@@ -1,6 +1,6 @@
 <h2> <%= @task.description %> </h2>
-<p> <%= @task.due_date %> </p>
-<p> Completed? <%= @task.completed? %> </p>
+<p> Deadline: <%= @task.due_date.strftime("%b %d, %Y") %> </p>
+<p> <%= @task.completed? %> </p>
 
 <%= link_to "Return to Goal", goal_path(@task.goal_id) %>
 

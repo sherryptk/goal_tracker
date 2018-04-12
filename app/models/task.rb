@@ -3,7 +3,7 @@ class Task < ActiveRecord::Base
   belongs_to :user
 
   def completed?
-    self.completed ? "yes" : "no"
+    self.completed ? "Completed. You're Awesome!" : "Not Yet Completed"
   end
 
 end

@@ -4,6 +4,7 @@
 
 <h4>Categories:</h4>
 <ul>
+
  <% @goal.categories.each do |category| %>
   <li><%= category.name %> </li>
 <% end %>
@@ -12,7 +13,7 @@
 <h3>To Do</h3>
 <ul>
 <% @goal.tasks.each do |task| %>
-  <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date %></li>
+  <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
 <% end %>
 
 </ul>
