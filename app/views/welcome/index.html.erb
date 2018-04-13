@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+    <%= flash[:notice] %></p>
+<% end %>
+
 <h1>Welcome to Goal Tracker</h1>
 <%= link_to "Sign up with Email",  new_user_registration_path %> |
 <%= link_to "Sign in with Email", new_user_session_path %> |

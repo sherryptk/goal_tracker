@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
     if current_user
       render :home
     else
-      redirect_to root_path
+      redirect_to root_path, notice: 'You must be logged in to view that page.'
     end
   end
 
