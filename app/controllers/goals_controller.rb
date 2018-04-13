@@ -50,7 +50,7 @@ class GoalsController < ApplicationController
    end
 
  def goal_params
-   params.require(:goal).permit(:title, :description, category_ids:[], categories_attributes: [:name])
+   params.require(:goal).permit(:title, :description, category_ids:[], categories_attributes: [:id, :name])
  end
 
 end

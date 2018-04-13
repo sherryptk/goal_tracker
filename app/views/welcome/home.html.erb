@@ -1,4 +1,8 @@
-<p>Welcome <%= current_user.email %></p>
+<h3>Welcome, <%= current_user.email %>!</h3>
+
+<h2><%=  link_to "Create New Goal", new_goal_path%></h2>
+
+<h2><%=  link_to "View Current Goals", goals_path%></h2>
 
 <h3>Explore Goals by Category</h3>
 <ul>
@@ -6,7 +10,3 @@
   <li> <%= link_to category.name, category_path(category) %> </li>
 <% end %>
 </ul>
-
-<p><%=  link_to "Create New Goal", new_goal_path%></p>
-
-<p><%=  link_to "View Goals", goals_path%></p>
