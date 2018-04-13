@@ -14,10 +14,10 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.create(goal_params.merge(user_id: current_user.id))
 
-    if @goal
-      redirect_to @goal
+    if @goal.save
+      redirect_to @goal, notice: 'Goal was successfully created.'
     else
-      render :new
+      redirect_to new_goal_path, notice: 'Please try again, Be sure to fill in all fields.'
     end
   end
 
@@ -42,8 +42,6 @@ class GoalsController < ApplicationController
      @goal.destroy
      redirect_to goals_path(@goal)
    end
-
-
 
   private
 
