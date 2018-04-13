@@ -12,21 +12,26 @@
 
 <h3>To Do</h3>
 <ul>
-<% @goal.uncompleted_tasks.each do |task| %>
-  <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
-<% end %>
+  <% if !@goal.uncompleted_tasks.empty?%>
+    <% @goal.uncompleted_tasks.each do |task| %>
+      <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
+    <% end %>
+  <% else %>
+    <p>You have no upcoming tasks for this goal!<p>
+  <% end %>
 
 </ul>
 
 <h3>Past Deadline</h3>
 <ul>
+  <% if !@goal.past_due.empty?%>
 <% @goal.past_due.each do |task| %>
   <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
 <% end %>
-
+<% else %>
+  <p>You have no tasks past deadline for this goal!<p>
+<% end %>
 </ul>
-
-
 
 <p><%=link_to "Edit Goal", edit_goal_path  %></p>
 <p><%= button_to "Delete Goal", {:controller => :goals,
