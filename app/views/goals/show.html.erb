@@ -18,6 +18,14 @@
 
 </ul>
 
+<h3>Past Deadline</h3>
+<ul>
+<% @goal.past_due.each do |task| %>
+  <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
+<% end %>
+
+</ul>
+
 
 
 <p><%=link_to "Edit Goal", edit_goal_path  %></p>

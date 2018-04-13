@@ -12,7 +12,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params.merge(user_id: current_user.id))
-    @task.save
 
     if @task.save
       redirect_to @task, notice: 'Task was successfully created.'

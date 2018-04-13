@@ -32,3 +32,4 @@ gem "friendly_id"
 gem 'omniauth-facebook'
 
 gem 'american_date'
+gem 'validates_timeliness', '~> 4.0'

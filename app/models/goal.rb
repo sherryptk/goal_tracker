@@ -16,7 +16,15 @@ class Goal < ActiveRecord::Base
 
   def uncompleted_tasks
     self.tasks.select do |task|
-      if !task.completed
+      if !task.completed && task.due_date >= Date.today
+        task
+      end
+    end
+  end
+
+  def past_due
+    self.tasks.select do |task|
+      if task.due_date < Date.today
         task
       end
     end
