@@ -1,4 +1,7 @@
 class Goal < ActiveRecord::Base
+  validates :title, presence: true
+  validates :description, presence: true
+
   has_many :categories
   has_many :tasks
   belongs_to :user
