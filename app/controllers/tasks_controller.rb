@@ -11,13 +11,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    # @task = Task.create(task_params.merge(user_id: current_user.id))
-    # if @task
-    #   current_user.tasks << @task
-    # end
-    @task = current_user.tasks.build(task_params.merge(user_id: current_user.id))
+    @task = Task.create(task_params.merge(user_id: current_user.id))
     @task.save
-    redirect_to @task
+
+    if @task.save
+      redirect_to @task, notice: 'Task was successfully created.'
+    else
+      redirect_to new_task_path, notice: 'Please try again. Be sure to fill in all fields.'
+    end
   end
 
   def show
