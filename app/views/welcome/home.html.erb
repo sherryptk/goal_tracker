@@ -1,5 +1,12 @@
 <p>Welcome <%= current_user.email %></p>
 
+<h3>Explore Goals by Category</h3>
+<ul>
+<% current_user.categories.each do |category| %>
+  <li> <%= link_to category.name, category_path(category) %> </li>
+<% end %>
+</ul>
+
 <p><%=  link_to "Create New Goal", new_goal_path%></p>
 
 <p><%=  link_to "View Goals", goals_path%></p>
