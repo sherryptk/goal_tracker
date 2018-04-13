@@ -14,4 +14,12 @@ class Goal < ActiveRecord::Base
     end
   end
 
+  def uncompleted_tasks
+    self.tasks.select do |task|
+      if !task.completed
+        task
+      end
+    end
+  end
+
 end
