@@ -5,10 +5,10 @@
 
 <p><%= f.label :description %></p>
 <%= f.text_area :description, size: "24x6" %><br/>
-
+<% if !@goal.categories.empty? %>
 <p><%= f.label "Choose Existing Category" %></p>
 <%= collection_check_boxes :goal, :category_ids, Category.all, :id, :name %>
-
+<% end %>
 <%= f.fields_for :categories, @goal.categories.build do |category_fields| %>
 <p><%= f.label "Choose New Category" %></p>
      <%= category_fields.text_field :name %>
