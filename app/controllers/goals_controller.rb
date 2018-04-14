@@ -32,7 +32,7 @@ class GoalsController < ApplicationController
     @goal.update(goal_params)
 
    if @goal.save
-     redirect_to goal_path(@goal)
+     redirect_to goal_path(@goal), notice: 'Goal was successfully updated.'
    else
      render :edit
    end
@@ -40,7 +40,7 @@ class GoalsController < ApplicationController
 
    def destroy
      @goal.destroy
-     redirect_to goals_path(@goal)
+     redirect_to goals_path(@goal), notice: 'Goal was successfully deleted.'
    end
 
   private

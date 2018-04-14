@@ -30,7 +30,7 @@ class TasksController < ApplicationController
     @task.update(task_params)
 
      if @task.save
-       redirect_to task_path(@task)
+       redirect_to task_path(@task), notice: 'Task was successfully updated.'
      else
        render :edit
      end
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
 
    def destroy
      @task.destroy
-     redirect_to goal_path(@task.goal_id)
+     redirect_to goal_path(@task.goal_id), notice: 'Task was successfully deleted.'
    end
 
    private

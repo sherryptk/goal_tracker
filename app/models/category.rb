@@ -1,6 +1,4 @@
 class Category < ActiveRecord::Base
-  validates :name, presence: true
-
   has_many :goals
   has_many :users, through: :goals
 
