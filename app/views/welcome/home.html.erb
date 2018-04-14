@@ -7,14 +7,23 @@
 
 <h3>Explore Goals by Category</h3>
 <ul>
-<% current_user.categories.each do |category| %>
-  <li> <%= link_to category.name, category_path(category) %> </li>
+<% if !current_user.categories.empty? %>
+  <% current_user.categories.each do |category| %>
+    <li> <%= link_to category.name, category_path(category) %> </li>
+  <% end %>
+<% else %>
+  You have no goals added right now
 <% end %>
 </ul>
 
 <h3>Upcoming Deadlines</h3>
 <ul>
-<% current_user.tasks.each do |task| %>
-  <li> <%= link_to task.description, task_path(task) %> </li>
+<% if !current_user.categories.empty? %>
+  <% current_user.tasks.each do |task| %>
+    <li> <%= link_to task.description, task_path(task) %> </li>
+  <% end %>
+<% else %>
+  You have no upcoming deadlines
 <% end %>
+
 </ul>

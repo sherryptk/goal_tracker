@@ -5,12 +5,14 @@ class Goal < ActiveRecord::Base
   has_many :categories
   has_many :tasks
   belongs_to :user
-  accepts_nested_attributes_for :categories, update_only: true
+  accepts_nested_attributes_for :categories
 
   def categories_attributes=(category_attributes)
-    category_attributes.values.each do |category_attribute|
-      category = Category.find_or_create_by(category_attribute)
-      self.categories << category
+    if category_attributes != ""
+      category_attributes.values.each do |category_attribute|
+        category = Category.find_or_create_by(category_attribute)
+        self.categories << category
+      end
     end
   end
 
