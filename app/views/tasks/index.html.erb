@@ -1,0 +1,5 @@
+<h1> <%= @goal.title %> Tasks </h1>
+
+<% @goal.tasks.each do |task| %>
+<%= link_to task.description, task_path(task) %>
+<% end %>
