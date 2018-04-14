@@ -4,9 +4,10 @@
 
 <h4>Categories:</h4>
 <ul>
-
  <% @goal.categories.each do |category| %>
-  <li><%= category.name %> </li>
+ <% if category.name != "" %>
+    <li><%= category.name %> </li>
+  <% end %>
 <% end %>
 </ul>
 
@@ -33,6 +34,7 @@
 <% end %>
 </ul>
 
+<p><%=link_to "Add Another Goal", new_goal_path  %></p>
 <p><%=link_to "Edit Goal", edit_goal_path  %></p>
 <p><%= button_to "Delete Goal", {:controller => :goals,
       :action => 'destroy', :id => @goal.id }, :method => :delete %></p>
