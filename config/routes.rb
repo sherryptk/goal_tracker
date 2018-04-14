@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get 'welcome/home', as: 'welcome'
 
+  get 'tasks/by_date', as: 'by_date'
+
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

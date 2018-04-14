@@ -6,6 +6,15 @@ class Task < ActiveRecord::Base
   belongs_to :goal
   belongs_to :user
 
+  def self.by_date
+    sorted = self.all.sort_by &:due_date
+    sorted.select do |task|
+      if task.completed == false
+        task
+      end
+    end
+  end
+
   def completed?
     self.completed ? "Completed. You're Awesome!" : "Not Yet Completed"
   end

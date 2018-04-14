@@ -41,6 +41,10 @@ class TasksController < ApplicationController
      redirect_to goal_path(@task.goal_id), notice: 'Task was successfully deleted.'
    end
 
+   def by_date
+
+   end
+
    private
    def set_task
       @task = Task.find(params[:id])

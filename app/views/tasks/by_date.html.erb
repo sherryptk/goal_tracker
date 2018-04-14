@@ -1,0 +1,7 @@
+<ul>
+<% Task.by_date.each do |task| %>
+<li><%= task.description %>
+  <p> Due: <%=task.due_date.strftime("%A, %b %d, %Y") %> </p>
+</li>
+<% end %>
+</ul>
