@@ -29,7 +29,7 @@ gem "bootstrap-sass", "~> 3.1.1"
 gem "faker"
 gem "friendly_id"
 
-gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-github'
 
 gem 'american_date'
-gem 'validates_timeliness', '~> 4.0'
