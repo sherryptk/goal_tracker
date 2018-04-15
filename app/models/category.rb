@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
-  has_many :goals
-  has_many :users, through: :goals
+  belongs_to :goals
+  belongs_to :user
 
   def goal_by_category
     Goal.all.select do |goal|

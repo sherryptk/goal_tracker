@@ -1,10 +1,10 @@
-<h2>Welcome, <%= current_user.email %>!</h2>
+<h1>Welcome, <%= current_user.email %>!</h1>
 
-<h3><%=  link_to "View All Your Goals", goals_path%></h3>
+ <p>View <%= link_to "Goals", goals_path%></p>
 
-<p><%=  link_to "Create New Goal", new_goal_path%></p>
+<p>Create New <%=  link_to "Goal", new_goal_path%></p>
 
-<p><%= link_to "View all your current tasks", by_date_path %></p>
+<p>View <%= link_to "Tasks", by_date_path %></p>
 
 <h3>Explore Goals by Category</h3>
 <ul>
@@ -21,7 +21,7 @@
 
 <h3>Upcoming Deadlines</h3>
 <ul>
-<% if !current_user.categories.empty? %>
+<% if !current_user.tasks.empty? %>
   <% current_user.tasks.each do |task| %>
     <li> <%= link_to task.description, task_path(task) %> </li>
   <% end %>

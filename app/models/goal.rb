@@ -1,11 +1,11 @@
 class Goal < ActiveRecord::Base
-  validates :title, presence: true
-  validates :description, presence: true
-
   has_many :categories
   has_many :tasks
   belongs_to :user
   accepts_nested_attributes_for :categories
+
+  validates :title, presence: true
+  validates :description, presence: true
 
   def categories_attributes=(category_attributes)
     category_attributes.values.each do |category_attribute|
