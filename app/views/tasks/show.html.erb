@@ -2,6 +2,9 @@
 <p> Deadline: <%= @task.due_date.strftime("%b %d, %Y") %> </p>
 <p> <%= @task.completed? %> </p>
 
+<p><%= button_to "Mark Complete", {:controller => :tasks,
+      :action => 'complete', :id => @task.id }, :method => :post %></p>
+      
 <p><%=link_to "Edit Task", edit_task_path  %></p>
 
 <p><%= button_to "Delete Task", {:controller => :tasks,

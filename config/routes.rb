@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'tasks/by_date', as: 'by_date'
 
+  post '/tasks/complete', as: 'complete'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
