@@ -34,12 +34,12 @@ class GoalsController < ApplicationController
    if @goal.save
      redirect_to goal_path(@goal), notice: 'Goal was successfully updated.'
    else
-     render :edit
+     redirect_to edit_goal_path(@goal), notice: 'Be sure not to leave any fields blank.'
    end
    end
 
    def destroy
-     @goal.destroy
+     @goal.delete
      redirect_to goals_path(@goal), notice: 'Goal was successfully deleted.'
    end
 

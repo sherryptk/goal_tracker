@@ -32,12 +32,12 @@ class TasksController < ApplicationController
      if @task.save
        redirect_to task_path(@task), notice: 'Task was successfully updated.'
      else
-       render :edit
+       redirect_to edit_task_path(@task), notice: 'Be sure not to leave any fields blank.'
      end
    end
 
    def destroy
-     @task.destroy
+     @task.delete
      redirect_to goal_path(@task.goal_id), notice: 'Task was successfully deleted.'
    end
 
