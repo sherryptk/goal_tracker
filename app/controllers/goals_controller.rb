@@ -23,6 +23,7 @@ class GoalsController < ApplicationController
 
   def show
     @uncompleted_tasks = @goal.uncompleted_tasks
+    @past_due = @goal.past_due
   end
 
   def edit

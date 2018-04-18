@@ -5,16 +5,14 @@
 <h4>Categories:</h4>
 <ul>
  <% @goal.categories.each do |category| %>
- <% if category.name != "" %>
     <li><%= category.name %> </li>
-  <% end %>
 <% end %>
 </ul>
 
 <h3>To Do</h3>
 <ul>
-  <% if !@goal.uncompleted_tasks.empty?%>
-    <% @goal.uncompleted_tasks.each do |task| %>
+  <% if !@uncompleted_tasks.empty?%>
+    <% @uncompleted_tasks.each do |task| %>
       <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
     <% end %>
   <% else %>
@@ -25,8 +23,8 @@
 
 <h3>Past Deadline</h3>
 <ul>
-  <% if !@goal.past_due.empty?%>
-<% @goal.past_due.each do |task| %>
+  <% if !@past_due.empty?%>
+<% @past_due.each do |task| %>
   <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
 <% end %>
 <% else %>
