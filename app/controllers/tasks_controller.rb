@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -39,10 +38,6 @@ class TasksController < ApplicationController
   def destroy
     @task.delete
     redirect_to goal_path(@task.goal_id), notice: 'Task was successfully deleted.'
-  end
-
-  def by_date
-
   end
 
   def complete

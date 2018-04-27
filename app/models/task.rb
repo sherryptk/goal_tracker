@@ -5,14 +5,7 @@ class Task < ActiveRecord::Base
   validates :description, presence: true
   validates :due_date, presence: true
 
-  def self.by_date
-    sorted = self.all.sort_by &:due_date
-    sorted.select do |task|
-      if task.completed == false
-        task
-      end
-    end
-  end
+  scope :by_date, -> { order(due_date: :asc).where(completed: false) }
 
   def completed?
     self.completed ? "Completed. You're Awesome!" : "Not Yet Completed"
