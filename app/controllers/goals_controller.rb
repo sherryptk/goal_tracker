@@ -1,7 +1,5 @@
 class GoalsController < ApplicationController
-
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
-
 
   def index
     @goals = Goal.all
@@ -32,26 +30,26 @@ class GoalsController < ApplicationController
   def update
     @goal.update(goal_params)
 
-   if @goal.save
-     redirect_to goal_path(@goal), notice: 'Goal was successfully updated.'
-   else
-     redirect_to edit_goal_path(@goal), notice: 'Be sure not to leave any fields blank.'
-   end
-   end
+    if @goal.save
+      redirect_to goal_path(@goal), notice: 'Goal was successfully updated.'
+    else
+      redirect_to edit_goal_path(@goal), notice: 'Be sure not to leave any fields blank.'
+    end
+  end
 
-   def destroy
-     @goal.delete
-     redirect_to goals_path(@goal), notice: 'Goal was successfully deleted.'
-   end
+  def destroy
+    @goal.delete
+    redirect_to goals_path(@goal), notice: 'Goal was successfully deleted.'
+  end
 
   private
 
   def set_goal
-     @goal = Goal.find(params[:id])
-   end
+    @goal = Goal.find(params[:id])
+  end
 
- def goal_params
-   params.require(:goal).permit(:title, :description, category_ids:[], categories_attributes: [:id, :name])
- end
+  def goal_params
+    params.require(:goal).permit(:title, :description, category_ids:[], categories_attributes: [:id, :name])
+  end
 
 end

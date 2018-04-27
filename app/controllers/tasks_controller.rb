@@ -29,32 +29,32 @@ class TasksController < ApplicationController
   def update
     @task.update(task_params)
 
-     if @task.save
-       redirect_to task_path(@task), notice: 'Task was successfully updated.'
-     else
-       redirect_to edit_task_path(@task), notice: 'Be sure not to leave any fields blank.'
-     end
-   end
-
-   def destroy
-     @task.delete
-     redirect_to goal_path(@task.goal_id), notice: 'Task was successfully deleted.'
-   end
-
-   def by_date
-
-   end
-
-   def complete
-     task = Task.find(params[:id])
-     task.update(:completed => true)
-     redirect_to task_path(task)
-   end
-
-   private
-   def set_task
-      @task = Task.find(params[:id])
+    if @task.save
+      redirect_to task_path(@task), notice: 'Task was successfully updated.'
+    else
+      redirect_to edit_task_path(@task), notice: 'Be sure not to leave any fields blank.'
     end
+  end
+
+  def destroy
+    @task.delete
+    redirect_to goal_path(@task.goal_id), notice: 'Task was successfully deleted.'
+  end
+
+  def by_date
+
+  end
+
+  def complete
+    task = Task.find(params[:id])
+    task.update(:completed => true)
+    redirect_to task_path(task)
+  end
+
+  private
+  def set_task
+    @task = Task.find(params[:id])
+  end
 
   def task_params
     params.require(:task).permit(:description, :due_date, :completed, :goal_id, :user_id, :id)
