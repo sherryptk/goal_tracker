@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
     @goals = Goal.all
     respond_to do |f|
       f.html { render :index }
-      f.json { render json: @goals, status: 201 }
+      f.json { render json: @goals }
     end
   end
 
@@ -26,6 +26,10 @@ class GoalsController < ApplicationController
   def show
     @uncompleted_tasks = @goal.uncompleted_tasks
     @past_due = @goal.past_due
+    respond_to do |f|
+      f.html { render :show }
+      f.json { render json: @goal }
+    end
   end
 
   def edit
