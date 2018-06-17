@@ -33,3 +33,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 gem 'american_date'
+
+gem 'dotenv-rails'
+
+gem 'active_model_serializers'
