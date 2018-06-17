@@ -2,7 +2,11 @@ class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @goals = current_user.goals
+    @goals = Goal.all
+    respond_to do |f|
+      f.html { render :index }
+      f.json { render json: @goals, status: 201 }
+    end
   end
 
   def new
