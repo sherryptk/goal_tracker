@@ -1,39 +1,11 @@
-<h2>Goal: <%= @goal.title %></h2
 
-<p><%= @goal.description %></p>
+<div class="goalTitle"><%= @goal.title %></div>
+<p class="goalDescription"><%= @goal.description %></p>
 
-<h4>Categories:</h4>
-<ul>
- <% @goal.categories.each do |category| %>
-    <li><%= category.name %> </li>
-<% end %>
-</ul>
-
-<h3>To Do</h3>
-<ul>
-  <% if !@uncompleted_tasks.empty?%>
-    <% @uncompleted_tasks.each do |task| %>
-      <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
-    <% end %>
-  <% else %>
-    <p>You have no upcoming tasks for this goal!<p>
-  <% end %>
-
-</ul>
-
-<h3>Past Deadline</h3>
-<ul>
-  <% if !@past_due.empty?%>
-<% @past_due.each do |task| %>
-  <li><%= link_to task.description, task_path(task) %>, Deadline: <%= task.due_date.strftime("%b %d, %Y") %></li>
-<% end %>
-<% else %>
-  <p>You have no tasks past deadline for this goal!<p>
-<% end %>
-</ul>
+<a href="#" class="js-next" data-id="<%=@goal.id%>">Next...</a><br><br>
+<a href="#" class="js-edit" data-id="<%=@goal.id%>">Edit Goal</a>
 
 <p><%=link_to "Add Another Goal", new_goal_path  %></p>
-<p><%=link_to "Edit Goal", edit_goal_path  %></p>
 <p><%= button_to "Delete Goal", {:controller => :goals,
       :action => 'destroy', :id => @goal.id }, :method => :delete %></p>
 
