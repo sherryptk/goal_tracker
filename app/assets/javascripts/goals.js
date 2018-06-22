@@ -26,7 +26,14 @@ $(function () {
     $('form').submit(function(event) {
       //prevent form from submitting the default way
       event.preventDefault();
-      alert("we r hack3rz");
+
+      var values = $(this).serialize();
+
+      var posting = $.post('/goals', values);
+
+      posting.done(function(data) {
+        // TODO: handle response
+      });
     });
   });
 
