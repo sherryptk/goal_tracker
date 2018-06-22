@@ -15,12 +15,7 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.create(goal_params.merge(user_id: current_user.id))
-
-    # if @goal.save
-      render json: @goal, status: 201
-    # else
-    #   redirect_to new_goal_path, notice: 'Please try again, Be sure to fill in all fields.'
-    # end
+    render json: @goal, status: 201
   end
 
   def show
