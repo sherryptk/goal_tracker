@@ -4,7 +4,6 @@ $(function () {
   $(".js-more").on('click', function() {
     var id = $(this).data("id");
     $.get("/goals/" + id + ".json", function(data) {
-      // Replace text of body-id div
       $("#body-" + id).text(data.data.attributes["description"]);
     });
   });
@@ -22,5 +21,13 @@ $(function () {
     });
   });
 });
+
+$(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      alert("we r hack3rz");
+    });
+  });
 
 })

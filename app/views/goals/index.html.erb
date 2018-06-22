@@ -1,13 +1,9 @@
 <h2>Goals</h2>
 <ol>
 <% @goals.each do |goal| %>
-<h3 ><%= goal.id %>: <%= link_to goal.title, goal_path(goal) %></h3>
-
-<div id="body-<%= goal.id %>"><%= truncate goal.description %></div>
-
-<button class="js-more" data-id="<%= goal.id %>">More...</button><br>
-
+  <h3 ><%= goal.id %>: <%= link_to goal.title, goal_path(goal) %></h3>
+  <div id="body-<%= goal.id %>"><%= truncate goal.description %></div>
+  <button class="js-more" data-id="<%= goal.id %>">More...</button><br>
 <% end %>
 </ol>
-
 <p><%=  link_to "Create New Goal", new_goal_path%></p>
