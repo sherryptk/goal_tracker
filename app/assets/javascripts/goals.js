@@ -24,7 +24,6 @@ $(function () {
 
 $(function () {
     $('form').submit(function(event) {
-      //prevent form from submitting the default way
       event.preventDefault();
 
       var values = $(this).serialize();
@@ -32,7 +31,9 @@ $(function () {
       var posting = $.post('/goals', values);
 
       posting.done(function(data) {
-        // TODO: handle response
+        var goal = data;
+       $("#goalTitle").text(goal["data"]["attributes"]["title"]);
+       $("#goalDescription").text(goal["data"]["attributes"]["description"]);
       });
     });
   });
