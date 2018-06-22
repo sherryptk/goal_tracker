@@ -1,3 +1,4 @@
 class CategorySerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :goal_id
+  belongs_to :goal
 end
