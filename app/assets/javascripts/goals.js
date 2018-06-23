@@ -32,8 +32,10 @@ $(function () {
 
       posting.done(function(data) {
         var goal = data;
-       $("#goalTitle").text(goal["data"]["attributes"]["title"]);
-       $("#goalDescription").text(goal["data"]["attributes"]["description"]);
+       $("#goalTitle").text(goal["goal"]["title"]);
+       $("#goalDescription").text(goal["goal"]["description"]);
+       $("#category").text(goal["goal"]["categories"]["0"]["name"]);
+
       });
     });
   });
