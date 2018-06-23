@@ -29,10 +29,9 @@ $(function () {
       url: ('/goals/' + id),
       type: 'POST',
       data: {"_method":"delete"},
-      // contentType:'application/json',
       dataType: "json",
       success: function(msg){
-        alert("Data Deleted: " + msg);
+        alert("Goal successfully deleted");
     }
     });
   });
