@@ -32,10 +32,12 @@ $(function () {
 
       posting.done(function(data) {
         var goal = data;
+       $('form').hide();
+       $('#pageHeading').hide();
+       $("#goalHeading").text("Your New Goal:");
        $("#goalTitle").text(goal["goal"]["title"]);
-       $("#goalDescription").text(goal["goal"]["description"]);
-       $("#category").text(goal["goal"]["categories"]["0"]["name"]);
-
+       $("#goalDescription").text("Description: " + goal["goal"]["description"]);
+       $("#category").text("Category: " + goal["goal"]["categories"]["0"]["name"]);
       });
     });
   });
