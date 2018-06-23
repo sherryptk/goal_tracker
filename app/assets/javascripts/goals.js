@@ -30,8 +30,10 @@ $(function () {
 
       var posting = $.post('/goals', values);
 
+
       posting.done(function(data) {
-        var goal = data;
+        var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"])
+        debugger
        $('form').hide();
        $('#pageHeading').hide();
        $("#goalHeading").text("Your New Goal:");
@@ -41,5 +43,18 @@ $(function () {
       });
     });
   });
+
+  class Goal {
+  constructor(title, description, category) {
+    this.title = title;
+    this.description = description;
+    this.category = category;
+
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
 
 })
