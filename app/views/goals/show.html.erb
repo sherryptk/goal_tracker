@@ -6,7 +6,6 @@
 <a href="#" class="js-edit" data-id="<%=@goal.id%>">Edit Goal</a>
 
 <p><%=link_to "Add Another Goal", new_goal_path  %></p>
-<p><%= button_to "Delete Goal", {:controller => :goals,
-      :action => 'destroy', :id => @goal.id }, :method => :delete %></p>
+<button class="js-delete" data-id="<%= @goal.id %>">Delete Goal</button><br>
 
 <%= link_to "Add Task", new_goal_task_path(@goal) %>

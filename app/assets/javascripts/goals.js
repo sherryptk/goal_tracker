@@ -23,6 +23,23 @@ $(function () {
 });
 
 $(function () {
+  $(".js-delete").on('click', function() {
+    var id = $(this).data("id");
+    $.ajax({
+      url: ('/goals/' + id),
+      type: 'POST',
+      data: {"_method":"delete"},
+      // contentType:'application/json',
+      dataType: "json",
+      success: function(msg){
+        alert("Data Deleted: " + msg);
+    }
+    });
+  });
+  event.preventDefault();
+});
+
+$(function () {
     $('form').submit(function(event) {
       event.preventDefault();
 
@@ -39,7 +56,7 @@ $(function () {
     });
   });
 
-  class Goal {
+class Goal {
   constructor(title, description, category) {
     this.title = title;
     this.description = description;

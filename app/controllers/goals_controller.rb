@@ -42,7 +42,9 @@ class GoalsController < ApplicationController
 
   def destroy
     @goal.delete
-    redirect_to goals_path(@goal), notice: 'Goal was successfully deleted.'
+    # redirect_to goals_path(@goal)
+    @goal.id = @goal.id + 1
+    render json: @goal, status: 201, notice: 'Goal was successfully deleted.'
   end
 
   private
