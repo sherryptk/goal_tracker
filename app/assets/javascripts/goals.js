@@ -4,7 +4,7 @@ $(function () {
   $(".js-more").on('click', function() {
     var id = $(this).data("id");
     $.get("/goals/" + id + ".json", function(data) {
-      $("#body-" + id).text(data.data.attributes["description"]);
+      $("#body-" + id).text(data["goal"]["description"]);
     });
   });
 });
