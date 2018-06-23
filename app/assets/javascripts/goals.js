@@ -30,16 +30,12 @@ $(function () {
 
       var posting = $.post('/goals', values);
 
-
       posting.done(function(data) {
         var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"])
-        debugger
-       $('form').hide();
-       $('#pageHeading').hide();
-       $("#goalHeading").text("Your New Goal:");
-       $("#goalTitle").text(goal["goal"]["title"]);
-       $("#goalDescription").text("Description: " + goal["goal"]["description"]);
-       $("#category").text("Category: " + goal["goal"]["categories"]["0"]["name"]);
+
+        $('form').hide();
+        $('#pageHeading').hide();
+        goal.postGoal();
       });
     });
   });
@@ -49,11 +45,13 @@ $(function () {
     this.title = title;
     this.description = description;
     this.category = category;
-
   }
 
-  sayHello() {
-    console.log(`Hello, my name is ${this.name}`);
+  postGoal() {
+    $("#goalHeading").text("Your New Goal:");
+    $("#goalTitle").text(`${this.title}`);
+    $("#goalDescription").text("Description: " + `${this.description}`);
+    $("#category").text("Category: " + `${this.category}`);
   }
 }
 
