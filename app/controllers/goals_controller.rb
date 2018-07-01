@@ -2,10 +2,11 @@ class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @goals = Goal.all
+    @goals = current_user.goals
+    render :index
     respond_to do |f|
-      f.html { render :index }
-      f.json { render json: @goals }
+      f.html { render :index, status: 200 }
+      f.json { render json: @goals, status: 200 }
     end
   end
 
@@ -14,7 +15,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.create(goal_params.merge(user_id: current_user.id))
+    @goal = Goal.create(goal_params)
     render json: @goal, status: 201
   end
 
@@ -23,7 +24,7 @@ class GoalsController < ApplicationController
     @past_due = @goal.past_due
     respond_to do |f|
       f.html { render :show }
-      f.json { render json: @goal }
+      f.json { render json: @goal, status: 200 }
     end
   end
 
@@ -32,12 +33,7 @@ class GoalsController < ApplicationController
 
   def update
     @goal.update(goal_params)
-
-    if @goal.save
-      redirect_to goal_path(@goal), notice: 'Goal was successfully updated.'
-    else
-      redirect_to edit_goal_path(@goal), notice: 'Be sure not to leave any fields blank.'
-    end
+    render json: @goal, status: 201
   end
 
   def destroy

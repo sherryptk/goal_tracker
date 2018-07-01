@@ -1,11 +1,8 @@
-
-<div class="goalTitle"><%= @goal.title %></div>
+<h1 class="goalTitle"><%= @goal.title %></h1>
 <p class="goalDescription"><%= @goal.description %></p>
 
 <a href="#" class="js-next" data-id="<%=@goal.id%>">Next...</a><br><br>
 <a href="#" class="js-edit" data-id="<%=@goal.id%>">Edit Goal</a>
-
 <p><%=link_to "Add Another Goal", new_goal_path  %></p>
-<button class="js-delete" data-id="<%= @goal.id %>">Delete Goal</button><br>
-
-<%= link_to "Add Task", new_goal_task_path(@goal) %>
+<button class="js-delete" data-id="<%= @goal.id %>">Delete Goal</button><br><br>
+<%= link_to "Add Task", new_goal_task_path(@goal) %><br>
