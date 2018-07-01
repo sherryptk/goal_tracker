@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.create(goal_params)
+    @goal = Goal.create(goal_params.merge(user_id: current_user.id))
     render json: @goal, status: 200
   end
 
