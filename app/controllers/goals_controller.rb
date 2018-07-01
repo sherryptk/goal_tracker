@@ -32,7 +32,10 @@ class GoalsController < ApplicationController
 
   def update
     @goal.update(goal_params)
-    render json: @goal, status: 201
+    respond_to do |f|
+      f.html { render :show }
+      f.json { render json: @goal, status: 200 }
+    end
   end
 
   def destroy

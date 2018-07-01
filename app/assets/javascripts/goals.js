@@ -10,6 +10,14 @@ $(function () {
 });
 
 $(function () {
+  $(".js-edit").on('click', function() {
+    var id = $(this).data("id");
+    var editGoal = document.getElementsByClassName('js-edit')
+    $(editGoal).attr('href', '/goals/' + id + '/edit');
+  });
+});
+
+$(function () {
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/goals/" + nextId + ".json", function(data) {
@@ -40,7 +48,16 @@ $(function () {
 });
 
 $(function () {
-    $('form#goal_form').submit(function(event) {
+  $(".js-more").on('click', function() {
+    var id = $(this).data("id");
+    $.get("/goals/" + id + ".json", function(data) {
+      $("#body-" + id).text(data["goal"]["description"]);
+    });
+  });
+});
+
+$(function () {
+    $('form#goal_form.new_goal').submit(function(event) {
       event.preventDefault();
 
       var values = $(this).serialize();
