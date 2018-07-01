@@ -23,6 +23,8 @@ $(function () {
     $.get("/goals/" + nextId + ".json", function(data) {
       $(".goalTitle").text(data["goal"]["title"]);
       $(".goalDescription").text(data["goal"]["description"]);
+      $( "li" ).hide();
+      $( "h4" ).hide();
       var editGoal = document.getElementsByClassName('js-edit')
       $(editGoal).hide();
       $('button.js-delete').hide();
