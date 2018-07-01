@@ -14,8 +14,8 @@ $(function () {
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/goals/" + nextId + ".json", function(data) {
-      var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"])
-      goal.postGoal();
+      // var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"])
+      // goal.postGoal();
 
       $(".goalTitle").text(data["goal"]["title"]);
       $(".goalDescription").text(data["goal"]["description"]);
@@ -43,7 +43,7 @@ $(function () {
 });
 
 $(function () {
-    $('goal_form').submit(function(event) {
+    $('form#new_goal.new_goal').submit(function(event) {
       event.preventDefault();
 
       var values = $(this).serialize();
@@ -52,10 +52,9 @@ $(function () {
 
       posting.done(function(data) {
         var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"], data["goal"]["categories"][0]["id"])
-        $('form').hide();
+        $('form#new_goal.new_goal').hide();
         $('#pageHeading').hide();
         goal.postGoal();
-
       });
     });
   });

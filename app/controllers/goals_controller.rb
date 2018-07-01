@@ -3,7 +3,6 @@ class GoalsController < ApplicationController
 
   def index
     @goals = current_user.goals
-    render :index
     respond_to do |f|
       f.html { render :index, status: 200 }
       f.json { render json: @goals, status: 200 }
@@ -16,7 +15,7 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.create(goal_params)
-    render json: @goal, status: 201
+    render json: @goal, status: 200
   end
 
   def show
