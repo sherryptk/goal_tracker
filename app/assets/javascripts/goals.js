@@ -9,18 +9,16 @@ $(function () {
   });
 });
 
-
 $(function () {
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/goals/" + nextId + ".json", function(data) {
-      // var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"])
-      // goal.postGoal();
-
       $(".goalTitle").text(data["goal"]["title"]);
       $(".goalDescription").text(data["goal"]["description"]);
       var editGoal = document.getElementsByClassName('js-edit')
-      $(editGoal).attr('href', '/goals/' + nextId + '/edit');
+      $(editGoal).hide();
+
+      // $(editGoal).attr('href', '/goals/' + nextId + '/edit');
       $(".js-next").attr("data-id", data["goal"]["id"]);
     });
   });
@@ -43,7 +41,7 @@ $(function () {
 });
 
 $(function () {
-    $('form#new_goal.new_goal').submit(function(event) {
+    $('form#goal_form').submit(function(event) {
       event.preventDefault();
 
       var values = $(this).serialize();
@@ -52,7 +50,7 @@ $(function () {
 
       posting.done(function(data) {
         var goal = new Goal(data["goal"]["title"], data["goal"]["description"], data["goal"]["categories"]["0"]["name"], data["goal"]["categories"][0]["id"])
-        $('form#new_goal.new_goal').hide();
+        $('form#goal_form').hide();
         $('#pageHeading').hide();
         goal.postGoal();
       });

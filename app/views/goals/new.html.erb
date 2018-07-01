@@ -1,4 +1,4 @@
 <div id="newGoal"><h1 id="pageHeading">Enter New Goal</h1></div>
-<%= form_for(@goal, :url => {:action => 'create'}) do |f| %>
+<%= form_for(@goal, :url => {:action => 'create'}, :html => {:id => 'goal_form'}) do |f| %>
 <%= render(:partial => "form", :locals => {:f => f}) %>
 <% end %>
