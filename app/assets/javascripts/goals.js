@@ -17,8 +17,7 @@ $(function () {
       $(".goalDescription").text(data["goal"]["description"]);
       var editGoal = document.getElementsByClassName('js-edit')
       $(editGoal).hide();
-
-      // $(editGoal).attr('href', '/goals/' + nextId + '/edit');
+      $('button.js-delete').hide();
       $(".js-next").attr("data-id", data["goal"]["id"]);
     });
   });
