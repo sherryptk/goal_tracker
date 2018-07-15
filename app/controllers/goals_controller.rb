@@ -3,6 +3,10 @@ class GoalsController < ApplicationController
 
   def index
     @goals = current_user.goals
+    respond_to do |f|
+      f.html { render :index, status: 200 }
+      f.json { render json: @goals, status: 200 }
+    end
   end
 
   def new
@@ -11,17 +15,16 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.create(goal_params.merge(user_id: current_user.id))
-
-    if @goal.save
-      redirect_to @goal, notice: 'Goal was successfully created.'
-    else
-      redirect_to new_goal_path, notice: 'Please try again, Be sure to fill in all fields.'
-    end
+    render json: @goal, status: 200
   end
 
   def show
     @uncompleted_tasks = @goal.uncompleted_tasks
     @past_due = @goal.past_due
+    respond_to do |f|
+      f.html { render :show }
+      f.json { render json: @goal, status: 200 }
+    end
   end
 
   def edit
@@ -29,17 +32,18 @@ class GoalsController < ApplicationController
 
   def update
     @goal.update(goal_params)
-
-    if @goal.save
-      redirect_to goal_path(@goal), notice: 'Goal was successfully updated.'
-    else
-      redirect_to edit_goal_path(@goal), notice: 'Be sure not to leave any fields blank.'
+    respond_to do |f|
+      f.html { render :show }
+      f.json { render json: @goal, status: 200 }
     end
   end
 
   def destroy
     @goal.delete
-    redirect_to goals_path(@goal), notice: 'Goal was successfully deleted.'
+    respond_to do |f|
+      f.html { render :index }
+      f.json { render json: @goal }
+    end
   end
 
   private
